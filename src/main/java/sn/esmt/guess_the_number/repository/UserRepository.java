@@ -1,11 +1,12 @@
 package sn.esmt.guess_the_number.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import sn.esmt.guess_the_number.models.User;
-import java.util.List;
 
-
+@Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
- List<User> findById(int id);
+ User findById(int id);
+ User findByLogin(String login);
 }

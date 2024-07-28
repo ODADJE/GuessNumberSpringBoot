@@ -1,18 +1,35 @@
 package sn.esmt.guess_the_number.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
-@Entity
+@Entity(name= "users")
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
   private String name;
+  @Column(unique = true)
   private String login;
   private String password;
+
+  @OneToMany(mappedBy = "user")
+  List<Tentative> tentatives = new ArrayList<>();
+
+  public User (String name, String login, String password) {
+    this.name = name;
+    this.login = login;
+    this.password = password;
+  }
+
+  public User() {}
 
   public int getId() {
     return id;

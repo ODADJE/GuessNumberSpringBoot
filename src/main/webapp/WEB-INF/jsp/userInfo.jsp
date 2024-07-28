@@ -6,13 +6,12 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Guess the number between 1 and 100</h1>
-    <h5>${message}</h5>
-    <form action="/game" method="post">
-      <label for="number">Guess the number:</label>
-      <input type="number" name="number" />
+    <h1>Login</h1>
+    <form action="/" method="post">
+      <label for="login">Login</label>
+      <input type="text" name="login" placeholder="Enter your login" />
       <input type="submit" value="Submit" />
     </form>
-    <!-- <a href="/users"></a> -->
+    <a href="/tentatives">Get all tentatives</a>
   </body>
 </html>
